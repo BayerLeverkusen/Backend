@@ -6,5 +6,6 @@ public enum UserRole {
     SHOP_MANAGER,
     HEAD_COACH,
     ASSISTANT_COACH,
-    EVENT_ORGANIZATOR
+    EVENT_ORGANIZATOR,
+    DIRECTOR
 }
