@@ -26,7 +26,7 @@ public class AuthenticationService {
         if(userRepository.existsByUsername(request.getUsername())){
             throw new Exception("User with the provided username already exists!");
         }
-        if(request.getUsername() == null || request.getLastName() == null || request.getFirstName() == null || request.getRole() == null || request.getPassword() == null){
+        if(request.getUsername() == null || request.getLastName() == null || request.getFirstName() == null || request.getRole() == null || request.getPassword() == null || request.getDateOfBirth() == null){
             throw new Exception("Please fill all the fields in order to proceed");
         }
         var user = User.builder()
@@ -35,6 +35,7 @@ public class AuthenticationService {
                 .username(request.getUsername())
                 .password(passwordEncoder.encode(request.getPassword()))
                 .role(request.getRole())
+                .dateOfBirth(request.getDateOfBirth())
                 .build();
         userRepository.save(user);
         var jwtToken = jwtService.generateToken(user);
