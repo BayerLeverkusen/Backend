@@ -16,7 +16,7 @@ public class EventOrganizatorServiceApplication implements CommandLineRunner {
 
 	@Override
 	public void run(String[] args) throws Exception {
-		initialDataInsertionService.insertInitialData();
+		//initialDataInsertionService.insertInitialData();
 
 	}
 
