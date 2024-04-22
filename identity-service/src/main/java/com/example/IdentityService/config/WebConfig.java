@@ -14,13 +14,12 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+                System.out.println("CORS mappings are being configured.");
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200", "http://localhost:90")
-                        .allowedMethods(HttpMethod.GET.name(),
-                                        HttpMethod.POST.name(),
-                                        HttpMethod.PUT.name(),
-                                        HttpMethod.DELETE.name())
-                        .allowedHeaders(HttpHeaders.CONTENT_TYPE, HttpHeaders.AUTHORIZATION);
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }
