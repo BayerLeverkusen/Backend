@@ -21,13 +21,13 @@ public class Event {
     private int id;
 
     @Column
-    public String name;
+    private String name;
 
     @Column
-    public LocalDate eventDate;
+    private LocalDate eventDate;
 
     @Column
-    public boolean type;
+    private boolean type;
 
     public Event(String name, Boolean type, LocalDate eventDate) {
         this.name = name;

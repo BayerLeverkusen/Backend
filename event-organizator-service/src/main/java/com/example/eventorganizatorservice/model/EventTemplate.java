@@ -19,7 +19,6 @@ public class EventTemplate {
     private int id;
 
 
-    
 
 
 }

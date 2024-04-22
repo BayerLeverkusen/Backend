@@ -19,19 +19,19 @@ public class Hotel {
     private int id;
 
     @Column
-    public String name;
+    private String name;
 
     @Column
-    public String country;
+    private String country;
 
     @Column
-    public String city;
+    private String city;
 
     @Column
-    public String address;
+    private String address;
 
     @Column
-    public double price;
+    private double price;
 
     public Hotel(String name, String country, String city, String address, double price) {
         this.name = name;

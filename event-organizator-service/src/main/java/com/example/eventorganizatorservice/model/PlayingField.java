@@ -19,19 +19,19 @@ public class PlayingField {
     private int id;
 
     @Column
-    public String name;
+    private String name;
 
     @Column
-    public String country;
+    private String country;
 
     @Column
-    public String city;
+    private String city;
 
     @Column
-    public String address;
+    private String address;
 
     @Column
-    public boolean type;
+    private boolean type;
 
     public PlayingField(String name, String country, String city, String address, boolean type) {
         this.name = name;
