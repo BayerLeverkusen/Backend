@@ -9,13 +9,14 @@ import java.util.Optional;
 @Repository
 public interface HotelRepository extends CrudRepository<Hotel, Integer> {
 
+    Hotel save(Hotel hotel);
 
     Optional<Hotel> findById(Integer integer);
 
     Optional<Hotel> findByName(String name);
 
-    Optional<Hotel> findAllByCity (String city);
+    Iterable<Hotel> findAllByCity (String city);
 
-    Optional<Hotel> findAllByCountry (String country);
+    Iterable<Hotel> findAllByCountry (String country);
 
 }

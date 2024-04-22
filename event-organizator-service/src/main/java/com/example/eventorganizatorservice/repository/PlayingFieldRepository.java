@@ -9,11 +9,13 @@ import java.util.Optional;
 @Repository
 public interface PlayingFieldRepository extends JpaRepository<PlayingField, Integer> {
 
+    PlayingField save(PlayingField playingField);
+
     Optional<PlayingField> findById(Integer id);
 
     Optional<PlayingField> findByName(String name);
 
-    Optional<PlayingField> findAllByCity (String city);
+    Iterable<PlayingField> findAllByCity (String city);
 
-    Optional<PlayingField> findAllByCountry (String country);
+    Iterable<PlayingField> findAllByCountry (String country);
 }
