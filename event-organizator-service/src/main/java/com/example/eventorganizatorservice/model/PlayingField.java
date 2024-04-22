@@ -11,7 +11,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-@Table(name = "playingFields")
+@Table(name = "fields")
 public class PlayingField {
 
     @Id
