@@ -5,5 +5,9 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface EventRepository extends JpaRepository<Event, Long> {
+public interface EventRepository extends JpaRepository<Event, Integer> {
+    Event findByName(String name);
+    Event findById(int id);
+    Event findByNameAndId(String name, Integer id);
+
 }
