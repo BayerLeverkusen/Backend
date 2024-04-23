@@ -61,20 +61,4 @@ public class AuthenticationService {
         String jwtToken = jwtService.generateToken(user);
         return AuthenticationResponse.builder().token(jwtToken).build();
     }
-
-    public List<UserDto> getAllUsers() {
-        List<User> users = userRepository.findAll();
-        return users.stream().map(this::convertToDto).collect(Collectors.toList());
-    }
-
-    private UserDto convertToDto(User user) {
-        return UserDto.builder()
-                .id(user.getId())
-                .name(user.getName())
-                .lastName(user.getLastName())
-                .username(user.getUsername())
-                .dateOfBirth(user.getDateOfBirth())
-                .role(user.getRole().name())
-                .build();
-    }
 }

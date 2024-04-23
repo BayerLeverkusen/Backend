@@ -33,6 +33,10 @@ public class InitialDataInsertionService {
         userRepository.save(user3);
     }
 
+    public boolean isInitialDataPresent(){
+        return userRepository.existsByUsername("XabiA");
+    }
+
 
 
 }

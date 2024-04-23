@@ -31,20 +31,16 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             @NonNull HttpServletResponse response,
             @NonNull FilterChain filterChain
     ) throws ServletException, IOException {
-        System.out.println("JwtAuthenticationFilter: Entering doFilterInternal");
         final String authHeader = request.getHeader("Authorization");
-        System.out.println(authHeader);
         final String jwtToken;
         final String username;
 
         if(authHeader == null || !authHeader.startsWith("Bearer ")){
-            System.out.println("JwtAuthenticationFilter: No JWT token found in the request");
             filterChain.doFilter(request,response);
             return;
         }
 
         jwtToken = authHeader.substring(7);
-        System.out.println("JwtAuthenticationFilter: JWT token found in the request: " + jwtToken);
         username = jwtService.extractUsername(jwtToken);
         if(username != null && SecurityContextHolder.getContext().getAuthentication() == null){
             UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
@@ -62,7 +58,5 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
             }
         }
         filterChain.doFilter(request,response);
-        System.out.println("JwtAuthenticationFilter: Exiting doFilterInternal");
-
     }
 }

@@ -25,7 +25,7 @@ public class AuthenticationController {
         try {
             return ResponseEntity.ok(authenticationService.register(request));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 
@@ -36,7 +36,7 @@ public class AuthenticationController {
         try {
             return ResponseEntity.ok(authenticationService.login(request));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 }

@@ -14,7 +14,6 @@ public class WebConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
-                System.out.println("CORS mappings are being configured.");
                 registry.addMapping("/**")
                         .allowedOrigins("http://localhost:4200", "http://localhost:90")
                         .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
