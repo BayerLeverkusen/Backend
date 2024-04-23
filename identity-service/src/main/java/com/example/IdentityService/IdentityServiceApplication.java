@@ -18,7 +18,9 @@ public class IdentityServiceApplication implements CommandLineRunner, WebMvcConf
 
 	@Override
 	public void run(String[] args) throws Exception {
-		initialDataInsertionService.insertInitialData();
+		if(!initialDataInsertionService.isInitialDataPresent()){
+			initialDataInsertionService.insertInitialData();
+		}
 	}
 
 }

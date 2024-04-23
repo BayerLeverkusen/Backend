@@ -2,14 +2,14 @@ package com.example.IdentityService.controller;
 
 import com.example.IdentityService.dtos.LoginRequest;
 import com.example.IdentityService.dtos.RegisterRequest;
+import com.example.IdentityService.dtos.UserDto;
 import com.example.IdentityService.service.AuthenticationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/auth")
@@ -25,7 +25,7 @@ public class AuthenticationController {
         try {
             return ResponseEntity.ok(authenticationService.register(request));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
 
@@ -36,8 +36,7 @@ public class AuthenticationController {
         try {
             return ResponseEntity.ok(authenticationService.login(request));
         } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
+            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(e.getMessage());
         }
     }
-
 }
