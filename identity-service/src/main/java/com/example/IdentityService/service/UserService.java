@@ -57,5 +57,15 @@ public class UserService {
         userRepository.save(user);
     }
 
+    public boolean deleteUserById(Integer userId) throws Exception {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        if (optionalUser.isPresent()) {
+            userRepository.delete(optionalUser.get());
+            return true;
+        } else {
+            throw new Exception("User not found");
+        }
+    }
+
 
 }
