@@ -33,12 +33,16 @@ public class PlayingField {
     @Column
     private boolean type;
 
-    public PlayingField(String name, String country, String city, String address, boolean type) {
+    @Column
+    private double rating;
+
+    public PlayingField(String name, String country, String city, String address, boolean type,double rating) {
         this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
         this.type = type;
+        this.rating = rating;
     }
 
 }

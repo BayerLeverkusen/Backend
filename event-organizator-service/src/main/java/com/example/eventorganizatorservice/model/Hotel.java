@@ -33,12 +33,16 @@ public class Hotel {
     @Column
     private double price;
 
-    public Hotel(String name, String country, String city, String address, double price) {
+    @Column
+    private double rating;
+
+    public Hotel(String name, String country, String city, String address, double price, double rating) {
         this.name = name;
         this.country = country;
         this.city = city;
         this.address = address;
         this.price = price;
+        this.rating = rating;
     }
 
 }
