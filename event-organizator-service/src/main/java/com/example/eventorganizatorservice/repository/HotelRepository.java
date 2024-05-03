@@ -19,4 +19,6 @@ public interface HotelRepository extends CrudRepository<Hotel, Integer> {
 
     Iterable<Hotel> findAllByCountry (String country);
 
+
+
 }
