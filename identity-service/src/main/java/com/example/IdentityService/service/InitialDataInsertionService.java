@@ -12,31 +12,28 @@ import java.time.LocalDate;
 
 @Service
 public class InitialDataInsertionService {
+
     @Autowired
     private UserRepository userRepository;
+
     @Autowired
     private PasswordEncoder passwordEncoder;
 
+    private void insertUserIfNotExists(String firstName, String lastName, String username, String password, LocalDate birthDate, UserRole role) {
+        if (!userRepository.existsByUsername(username)) {
+            User user = new User(firstName, lastName, username, passwordEncoder.encode(password), birthDate, role);
+            userRepository.save(user);
+        }
+    }
+
     @Transactional
-    public void insertInitialData(){
-        LocalDate user1BirthDate = LocalDate.of(1981, 11, 25);
-        User user1 = new User("Xabi", "Alonso", "XabiA", passwordEncoder.encode("leverkusen") , user1BirthDate, UserRole.HEAD_COACH);
+    public void insertInitialData() {
+        // Insert new initial data
+        insertUserIfNotExists("Xabi", "Alonso", "XabiA", "leverkusen", LocalDate.of(1981, 11, 25), UserRole.HEAD_COACH);
+        insertUserIfNotExists("Uros", "Marihuanski", "Loha021", "loha123", LocalDate.of(2001, 12, 21), UserRole.EVENT_ORGANIZATOR);
+        insertUserIfNotExists("Admin", "Administrator", "NajjaciAdmin123", "admin", LocalDate.of(1994, 11, 20), UserRole.ADMIN);
+        insertUserIfNotExists("Aleksa", "Simeunovic", "marketing", "manager", LocalDate.of(1994, 11, 20), UserRole.SHOP_MANAGER);
+        insertUserIfNotExists("Aleksa", "Lukac", "uprava", "uprava", LocalDate.of(1994, 11, 20), UserRole.DIRECTOR);
 
-        LocalDate user2BirthDate = LocalDate.of(2001, 12, 21);
-        User user2 = new User("Uros", "Marihuanski", "Loha021", passwordEncoder.encode("loha123"), user2BirthDate, UserRole.EVENT_ORGANIZATOR);
-
-        LocalDate user3BirthDate = LocalDate.of(1994,11,20);
-        User user3 = new User("Admin", "Administrator", "NajjaciAdmin123", passwordEncoder.encode("admin"), user3BirthDate, UserRole.ADMIN);
-
-        userRepository.save(user1);
-        userRepository.save(user2);
-        userRepository.save(user3);
     }
-
-    public boolean isInitialDataPresent(){
-        return userRepository.existsByUsername("XabiA");
-    }
-
-
-
 }
