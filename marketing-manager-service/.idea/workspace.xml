@@ -53,7 +53,7 @@
     "Spring Boot.MarketingManagerServiceApplication.executor": "Run",
     "git-widget-placeholder": "Marketing__Manager__1__Sprint__Bekend",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/aleks/OneDrive/Dokumenti/GitHub/Backend/identity-service",
+    "last_opened_file_path": "C:/Users/aleks/OneDrive/Dokumenti/GitHub/Backend/marketing-manager-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -94,6 +94,7 @@
       <workItem from="1714649482567" duration="8512000" />
       <workItem from="1714743608885" duration="5659000" />
       <workItem from="1714815755311" duration="2524000" />
+      <workItem from="1714832860321" duration="51000" />
     </task>
     <servers />
   </component>
