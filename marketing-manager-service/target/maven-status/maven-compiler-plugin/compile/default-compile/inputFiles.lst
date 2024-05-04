@@ -1,2 +1,5 @@
-C:\Users\ifeel\Documents\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\MarketingManagerServiceApplication.java
-C:\Users\ifeel\Documents\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\model\Article.java
+C:\Users\aleks\OneDrive\Dokumenti\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\model\Article.java
+C:\Users\aleks\OneDrive\Dokumenti\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\service\InitialDataInsertionService.java
+C:\Users\aleks\OneDrive\Dokumenti\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\repository\ArticleRepository.java
+C:\Users\aleks\OneDrive\Dokumenti\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\MarketingManagerServiceApplication.java
+C:\Users\aleks\OneDrive\Dokumenti\GitHub\Backend\marketing-manager-service\src\main\java\com\example\marketingmanagerservice\controller\ArticleController.java

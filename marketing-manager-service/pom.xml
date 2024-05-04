@@ -8,11 +8,11 @@
 		<version>3.1.5</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>event-organization-service</groupId>
-	<artifactId>event-organization-service</artifactId>
+	<groupId>marketing-manager-service</groupId>
+	<artifactId>marketing-manager-service</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	<name>event-organization-service</name>
+	<name>marketing-manager-service</name>
 	<properties>
 		<java.version>17</java.version>
 	</properties>

@@ -42,15 +42,18 @@
   "keyToString": {
     "Maven.event-organization-service [clean].executor": "Run",
     "Maven.event-organization-service [install].executor": "Run",
+    "Maven.marketing-manager-service [clean].executor": "Run",
+    "Maven.marketing-manager-service [install].executor": "Run",
     "RequestMappingsPanelOrder0": "0",
     "RequestMappingsPanelOrder1": "1",
     "RequestMappingsPanelWidth0": "75",
     "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "Spring Boot.MarketingManagerServiceApplication.executor": "Run",
-    "git-widget-placeholder": "Marketing-Manager-Service-Backend",
+    "git-widget-placeholder": "Marketing__Manager__1__Sprint__Bekend",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/ifeel/Documents/GitHub/Backend/identity-service",
+    "last_opened_file_path": "C:/Users/aleks/OneDrive/Dokumenti/GitHub/Backend/identity-service",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,7 +65,7 @@
 }]]></component>
   <component name="RunManager">
     <configuration name="MarketingManagerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <module name="marketing-manager-service" />
+      <module name="event-organization-service" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.marketingmanagerservice.MarketingManagerServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -72,8 +75,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
-        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
+        <option value="jdk-11.0.16-jbr_dcevm-11.0.16-4caba194b151-788636e5" />
+        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
       </set>
     </attachedChunks>
   </component>
@@ -89,6 +92,8 @@
       <workItem from="1714634541355" duration="151000" />
       <workItem from="1714635028506" duration="3671000" />
       <workItem from="1714649482567" duration="8512000" />
+      <workItem from="1714743608885" duration="5659000" />
+      <workItem from="1714815755311" duration="2524000" />
     </task>
     <servers />
   </component>

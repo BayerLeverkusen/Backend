@@ -1,3 +1,6 @@
+com\example\marketingmanagerservice\MarketingManagerServiceApplication.class
+com\example\marketingmanagerservice\controller\ArticleController.class
+com\example\marketingmanagerservice\service\InitialDataInsertionService.class
 com\example\marketingmanagerservice\model\Article$ArticleBuilder.class
 com\example\marketingmanagerservice\model\Article.class
-com\example\marketingmanagerservice\MarketingManagerServiceApplication.class
+com\example\marketingmanagerservice\repository\ArticleRepository.class
