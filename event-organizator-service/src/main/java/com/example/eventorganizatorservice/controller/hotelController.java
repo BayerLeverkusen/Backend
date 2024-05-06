@@ -19,8 +19,8 @@ public class hotelController {
     private HotelService hotelService;
 
     @GetMapping("/getAll")
-    public ResponseEntity<List<HotelDto>> getAllUsers(@RequestBody HotelRequest request) {
-        return ResponseEntity.ok(hotelService.getAllHotels(request));
+    public ResponseEntity<List<HotelDto>> getAllUsers(String city) {
+        return ResponseEntity.ok(hotelService.getAllHotels(city));
     }
 
 

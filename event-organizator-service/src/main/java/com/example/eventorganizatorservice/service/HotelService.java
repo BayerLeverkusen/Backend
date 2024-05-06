@@ -16,8 +16,8 @@ public class HotelService {
     @Autowired
     private HotelRepository hotelRepository;
 
-    public List<HotelDto> getAllHotels(HotelRequest hotelRequest) {
-        List<Hotel> hotels = hotelRepository.findAllByCity(hotelRequest.getCity());
+    public List<HotelDto> getAllHotels(String hotelRequest) {
+        List<Hotel> hotels = hotelRepository.findAllByCity(hotelRequest);
         return hotels.stream().map(this::convertToDto).collect(Collectors.toList());
 
     }
