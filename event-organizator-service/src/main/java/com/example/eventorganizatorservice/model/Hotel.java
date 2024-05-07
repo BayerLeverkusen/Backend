@@ -36,6 +36,7 @@ public class Hotel {
     @Column
     private double rating;
 
+
     public Hotel(String name, String country, String city, String address, double price, double rating) {
         this.name = name;
         this.country = country;
