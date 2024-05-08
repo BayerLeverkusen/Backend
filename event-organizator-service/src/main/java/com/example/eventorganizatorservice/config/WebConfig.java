@@ -1,4 +1,4 @@
-package com.example.IdentityService.config;
+package com.example.eventorganizatorservice.config;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

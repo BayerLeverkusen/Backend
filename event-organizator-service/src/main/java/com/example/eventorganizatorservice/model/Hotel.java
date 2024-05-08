@@ -1,22 +1,18 @@
 package com.example.eventorganizatorservice.model;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 @Entity
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
+@Setter
 @Table(name = "hotels")
-public class Hotel {
+public class Hotel extends Resource {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+
 
     @Column
     private String name;
@@ -36,13 +32,7 @@ public class Hotel {
     @Column
     private double rating;
 
-    public Hotel(String name, String country, String city, String address, double price, double rating) {
-        this.name = name;
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.price = price;
-        this.rating = rating;
-    }
+
+
 
 }

@@ -12,11 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "transports")
-public class Transport {
+public class Transport extends Resource {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+
 
     @Column
     private String name;
@@ -36,13 +34,6 @@ public class Transport {
     @Column
     private double rating;
 
-    public Transport(String name, String country, String city, String address, double price, double rating) {
-        this.name = name;
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.price = price;
-        this.rating = rating;
-    }
+
 
 }
