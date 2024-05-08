@@ -30,12 +30,27 @@ public class BudgetProposalService {
         budgetProposalRepository.save(budgetProposal);
     }
 
-    public void increaseCount(int id)
+    public void increaseCount1(int id)
     {
         BudgetProposal budgetProposal = budgetProposalRepository.getBudgetProposalsById(id);
         budgetProposalRepository.deleteById(id);
         budgetProposal.numOfVotes = budgetProposal.numOfVotes+1;
         budgetProposalRepository.save(budgetProposal);
+    }
+
+    public void increaseCount(int id)
+    {
+        List<BudgetProposal> budgetProposals = getBudgetProposals();
+        for (BudgetProposal budgetProposal:budgetProposals)
+        {
+            if(budgetProposal.getId()==id)
+            {
+                budgetProposal.setNumOfVotes(budgetProposal.getNumOfVotes()+1);
+            }
+        }
+
+        budgetProposalRepository.deleteAll();
+        budgetProposalRepository.saveAll(budgetProposals);
     }
 
     public List<BudgetProposal> getBudgetProposals()
