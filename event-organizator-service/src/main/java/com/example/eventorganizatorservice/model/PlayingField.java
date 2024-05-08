@@ -12,11 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "fields")
-public class PlayingField {
+public class PlayingField extends Resource {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+
 
     @Column
     private String name;
@@ -36,13 +34,6 @@ public class PlayingField {
     @Column
     private double rating;
 
-    public PlayingField(String name, String country, String city, String address, boolean type,double rating) {
-        this.name = name;
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.type = type;
-        this.rating = rating;
-    }
+
 
 }

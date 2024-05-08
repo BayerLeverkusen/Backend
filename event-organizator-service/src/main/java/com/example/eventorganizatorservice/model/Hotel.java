@@ -12,11 +12,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "hotels")
-public class Hotel {
+public class Hotel extends Resource {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id;
+
 
     @Column
     private String name;
@@ -37,13 +35,6 @@ public class Hotel {
     private double rating;
 
 
-    public Hotel(String name, String country, String city, String address, double price, double rating) {
-        this.name = name;
-        this.country = country;
-        this.city = city;
-        this.address = address;
-        this.price = price;
-        this.rating = rating;
-    }
+
 
 }

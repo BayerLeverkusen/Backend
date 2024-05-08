@@ -18,7 +18,15 @@ import java.util.List;
 public class Reservations {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
+    @ManyToOne
+    @JoinColumn(name = "resource_id")
+    private Resource resource; // Reference to hotel, transport, or playing field
+
+    @Column
+    private Type type;
 
     @Column
     private LocalDate startDate;
@@ -26,8 +34,7 @@ public class Reservations {
     @Column
     private LocalDate endDate;
 
-    @Column
-    private Type type;
+
 
     public Reservations(LocalDate startDate, LocalDate endDate, Type type) {
         this.startDate = startDate;
