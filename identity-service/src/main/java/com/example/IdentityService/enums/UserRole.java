@@ -7,5 +7,6 @@ public enum UserRole {
     HEAD_COACH,
     ASSISTANT_COACH,
     EVENT_ORGANIZATOR,
-    DIRECTOR
+    DIRECTOR,
+    BOARD_MEMBER
 }
