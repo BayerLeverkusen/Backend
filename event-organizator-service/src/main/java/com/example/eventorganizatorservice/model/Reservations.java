@@ -36,10 +36,11 @@ public class Reservations {
 
 
 
-    public Reservations(LocalDate startDate, LocalDate endDate, Type type) {
+    public Reservations(LocalDate startDate, LocalDate endDate, Type type, Resource resource) {
         this.startDate = startDate;
         this.endDate = endDate;
         this.type = type;
+        this.resource = resource;
 
     }
 

@@ -2,6 +2,7 @@ package com.example.eventorganizatorservice.controller;
 
 import com.example.eventorganizatorservice.dtos.HotelDto;
 import com.example.eventorganizatorservice.dtos.HotelRequest;
+import com.example.eventorganizatorservice.dtos.HotelReservationRequest;
 import com.example.eventorganizatorservice.model.Hotel;
 import com.example.eventorganizatorservice.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,10 @@ public class hotelController {
         return ResponseEntity.ok(hotelService.getAllHotels(city));
     }
 
+    @PostMapping("/reserve")
+    public void reserveHotel(@RequestBody HotelReservationRequest hotelReservationRequest) {
+
+        hotelService.reserveHotel(hotelReservationRequest);
+    }
 
 }

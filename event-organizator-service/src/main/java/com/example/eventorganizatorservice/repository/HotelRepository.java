@@ -14,7 +14,7 @@ public interface HotelRepository extends CrudRepository<Hotel, Integer> {
 
     Optional<Hotel> findById(Integer integer);
 
-    Optional<Hotel> findByName(String name);
+    Hotel findByName(String name);
 
     List<Hotel> findAllByCity (String city);
 
