@@ -3,8 +3,11 @@ package sportmanagmentservice.example.sportmanagmentservice.service;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import sportmanagmentservice.example.sportmanagmentservice.enums.FacilityType;
 import sportmanagmentservice.example.sportmanagmentservice.enums.PlayerPosition;
+import sportmanagmentservice.example.sportmanagmentservice.model.ClubFacility;
 import sportmanagmentservice.example.sportmanagmentservice.model.Player;
+import sportmanagmentservice.example.sportmanagmentservice.repository.ClubFacilityRepository;
 import sportmanagmentservice.example.sportmanagmentservice.repository.PlayerRepository;
 
 import java.time.LocalDate;
@@ -16,6 +19,9 @@ public class InitialDataInsertionService {
 
     @Autowired
     private PlayerRepository playerRepository;
+
+    @Autowired
+    private ClubFacilityRepository clubFacilityRepository;
 
     private void insertPlayerIfNotExists(String firstName, String lastName, LocalDate dateOfBirth, String nationality, double averageRating, Set<PlayerPosition> positions, int goals, int assists, int cleanSheets, boolean isInjured){
         if(!playerRepository.existsBylastName(lastName)){
@@ -35,8 +41,21 @@ public class InitialDataInsertionService {
         }
     }
 
+    private void insertClubFacilityIfNotExists(String name, int capacity, FacilityType type){
+        if(!clubFacilityRepository.existsByname(name)){
+            ClubFacility clubFacility = ClubFacility.builder()
+                    .name(name)
+                    .capacity(capacity)
+                    .type(type)
+                    .build();
+
+            clubFacilityRepository.save(clubFacility);
+        }
+    }
+
     @Transactional
     public void insertInitialData() {
+        // INSERTING THE PLAYERS
         Set<PlayerPosition> playerPositions1 = new HashSet<>();
         playerPositions1.add(PlayerPosition.GK);
         insertPlayerIfNotExists("Lukas", "Hradecky", LocalDate.of(1989, 11, 24), "Finland", 7, playerPositions1, 0, 0, 14, false );
@@ -108,5 +127,17 @@ public class InitialDataInsertionService {
         Set<PlayerPosition> playerPosition20 = new HashSet<>();
         playerPosition20.add(PlayerPosition.ST);
         insertPlayerIfNotExists("Patrik", "Schick", LocalDate.of(1996,1,24), "Czech Republic", 6.9, playerPosition20, 6,0,9, false);
+        Set<PlayerPosition> playerPosition21 = new HashSet<>();
+        playerPosition21.add(PlayerPosition.ST);
+        insertPlayerIfNotExists("Ifeel", "Design", LocalDate.of(2001,7,19), "Serbia", 5.5, playerPosition21, 7, 7, 8, true);
+
+        //INSERTING CLUB FACILITIES
+        insertClubFacilityIfNotExists("Training Pitch 1", 20, FacilityType.TRAINING_PITCH);
+        insertClubFacilityIfNotExists("Training Pitch 2", 10, FacilityType.TRAINING_PITCH);
+        insertClubFacilityIfNotExists("Gym Room 1", 10, FacilityType.GYM);
+        insertClubFacilityIfNotExists("Gym Room 2", 10, FacilityType.GYM);
+        insertClubFacilityIfNotExists("Meeting Room", 20, FacilityType.MEETING_ROOM);
+        insertClubFacilityIfNotExists("Hospital", 5, FacilityType.HOSPITAL);
+
     }
 }

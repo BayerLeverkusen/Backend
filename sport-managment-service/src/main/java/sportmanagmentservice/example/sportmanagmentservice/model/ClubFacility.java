@@ -20,6 +20,9 @@ public class ClubFacility {
     private int id;
 
     @Column
+    private String name;
+
+    @Column
     private int capacity;
 
     @Column

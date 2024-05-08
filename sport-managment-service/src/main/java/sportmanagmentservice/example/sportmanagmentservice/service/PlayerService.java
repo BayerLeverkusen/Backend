@@ -25,6 +25,9 @@ public class PlayerService {
                 .name(player.getName())
                 .lastName(player.getLastName())
                 .nationality(player.getNationality())
+                .positions(player.getPositions().stream()
+                        .map(Enum::toString)
+                        .collect(Collectors.toSet()))
                 .build();
     }
 
