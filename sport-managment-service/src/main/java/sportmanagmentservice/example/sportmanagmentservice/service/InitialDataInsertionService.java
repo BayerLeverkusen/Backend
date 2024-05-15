@@ -79,7 +79,7 @@ public class InitialDataInsertionService {
         Set<PlayerPosition> playerPosition7 = new HashSet<>();
         playerPosition7.add(PlayerPosition.CB);
         playerPosition7.add(PlayerPosition.LB);
-        insertPlayerIfNotExists("Josip", "Stanisic", LocalDate.of(2000,4,2), "Croatia", 7.2, playerPosition7, 2,0,5, false);
+        insertPlayerIfNotExists("Josip", "Stanisic", LocalDate.of(2000,4,2), "Croatia", 7.2, playerPosition7, 2,0,5, true);
         Set<PlayerPosition> playerPosition8 = new HashSet<>();
         playerPosition8.add(PlayerPosition.CB);
         insertPlayerIfNotExists("Jonathan", "Tah", LocalDate.of(1996,2,11), "Germany", 7.1, playerPosition8, 4,1,14, false);
@@ -110,7 +110,7 @@ public class InitialDataInsertionService {
         Set<PlayerPosition> playerPosition15 = new HashSet<>();
         playerPosition15.add(PlayerPosition.CDM);
         playerPosition15.add(PlayerPosition.CM);
-        insertPlayerIfNotExists("Granit", "Xhaka", LocalDate.of(1992,9,27), "Switzerland", 7.3, playerPosition15, 7,3,9, false);
+        insertPlayerIfNotExists("Granit", "Xhaka", LocalDate.of(1992,9,27), "Switzerland", 7.3, playerPosition15, 7,3,9, true);
         Set<PlayerPosition> playerPosition16 = new HashSet<>();
         playerPosition16.add(PlayerPosition.ST);
         insertPlayerIfNotExists("Victor", "Boniface", LocalDate.of(2000,12,23), "Nigeria", 7.5, playerPosition16, 12,8,9, false);
@@ -129,7 +129,7 @@ public class InitialDataInsertionService {
         insertPlayerIfNotExists("Patrik", "Schick", LocalDate.of(1996,1,24), "Czech Republic", 6.9, playerPosition20, 6,0,9, false);
         Set<PlayerPosition> playerPosition21 = new HashSet<>();
         playerPosition21.add(PlayerPosition.ST);
-        insertPlayerIfNotExists("Ifeel", "Design", LocalDate.of(2001,7,19), "Serbia", 5.5, playerPosition21, 7, 7, 8, true);
+        insertPlayerIfNotExists("Ifeel", "Design", LocalDate.of(2001,7,19), "Serbia", 5.5, playerPosition21, 7, 7, 8, false);
 
         //INSERTING CLUB FACILITIES
         insertClubFacilityIfNotExists("Training Pitch 1", 20, FacilityType.TRAINING_PITCH);

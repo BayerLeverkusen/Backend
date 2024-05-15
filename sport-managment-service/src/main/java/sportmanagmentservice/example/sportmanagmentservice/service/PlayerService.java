@@ -28,6 +28,7 @@ public class PlayerService {
                 .positions(player.getPositions().stream()
                         .map(Enum::toString)
                         .collect(Collectors.toSet()))
+                .isInjured(player.isInjured())
                 .build();
     }
 

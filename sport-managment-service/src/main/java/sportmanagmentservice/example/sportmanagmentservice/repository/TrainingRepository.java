@@ -5,8 +5,12 @@ import org.springframework.stereotype.Repository;
 import sportmanagmentservice.example.sportmanagmentservice.model.Player;
 import sportmanagmentservice.example.sportmanagmentservice.model.Training;
 
+import java.util.List;
+
 @Repository
 public interface TrainingRepository extends JpaRepository<Training, Integer> {
 
     Training save(Training training);
+
+    List<Training> findByClubFacilityId(Long clubFacilityId);
 }

@@ -5,17 +5,14 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Set;
+import java.time.LocalTime;
 
 @Data
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class PlayerDTO {
+public class TrainingDTO {
     private int id;
-    private String name;
-    private String lastName;
-    private String nationality;
-    private Set<String> positions;
-    private boolean isInjured;
+    private LocalTime time;
+    private int clubFacilityId;
 }

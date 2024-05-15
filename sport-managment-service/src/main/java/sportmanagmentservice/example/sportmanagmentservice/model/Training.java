@@ -28,7 +28,7 @@ public class Training {
     @Column
     private LocalTime time;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "club_facility_id")
     private ClubFacility clubFacility;
 
