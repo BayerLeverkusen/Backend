@@ -23,7 +23,7 @@ public class VotedService
         votedRepository.save(voted);
     }
 
-    public List<Voted> getByUser(String userId)
+    public List<Voted> getVotesByUser(String userId)
     {
         List<Voted> voted = new ArrayList<>();
 

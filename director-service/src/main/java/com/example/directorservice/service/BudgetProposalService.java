@@ -30,28 +30,13 @@ public class BudgetProposalService {
         budgetProposalRepository.save(budgetProposal);
     }
 
-    public void increaseCount1(int id)
+    public void increaseCount(int id)
     {
         BudgetProposal budgetProposal = budgetProposalRepository.getBudgetProposalsById(id);
-        budgetProposalRepository.deleteById(id);
-        budgetProposal.numOfVotes = budgetProposal.numOfVotes+1;
+        budgetProposal.setNumOfVotes(budgetProposal.getNumOfVotes()+1);
         budgetProposalRepository.save(budgetProposal);
     }
 
-    public void increaseCount(int id)
-    {
-        List<BudgetProposal> budgetProposals = getBudgetProposals();
-        for (BudgetProposal budgetProposal:budgetProposals)
-        {
-            if(budgetProposal.getId()==id)
-            {
-                budgetProposal.setNumOfVotes(budgetProposal.getNumOfVotes()+1);
-            }
-        }
-
-        budgetProposalRepository.deleteAll();
-        budgetProposalRepository.saveAll(budgetProposals);
-    }
 
     public List<BudgetProposal> getBudgetProposals()
     {
@@ -61,33 +46,51 @@ public class BudgetProposalService {
 
     public List<BudgetProposalDTO> getBudgetProposalsDTOs(String userId)
     {
-        List<BudgetProposalDTO> budgetProposalDTOS = convertToDTO();
-        List<Voted> voted = votedService.getByUser(userId);
-
-        for (BudgetProposalDTO budgetProposalDTO:budgetProposalDTOS)
-        {
-            for (Voted voted1:voted)
-            {
-                if(voted1.getProposaId()== budgetProposalDTO.getId())
-                {
-                    budgetProposalDTO.setVoted(true);
-                }
-
-            }
-        }
-
-        return budgetProposalDTOS;
+        return convertToDTO(getNonVotedProposals(userId));
 
     }
 
-    public List<BudgetProposalDTO> convertToDTO()
+
+    public List<BudgetProposal> getNonVotedProposals(String userId)
+    {
+        List<BudgetProposal> proposals = new ArrayList<>();
+
+        List<Voted> votedList = votedService.getVotesByUser(userId);
+
+        if(!hasVoted(userId))
+        {
+            proposals = budgetProposalRepository.findAll();
+            return proposals;
+        }
+        else
+        {
+            return proposals;
+        }
+    }
+
+    public boolean hasVoted(String userId)
+    {
+        List<Voted> votedList = votedService.getVotesByUser(userId);
+
+        if(votedList.isEmpty())
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+    }
+
+
+
+    public List<BudgetProposalDTO> convertToDTO(List<BudgetProposal> budgetProposals)
     {
         List<BudgetProposalDTO> budgetProposalDTOS = new ArrayList<>();
 
-        for (BudgetProposal budgetProposal:getBudgetProposals())
+        for (BudgetProposal budgetProposal:budgetProposals)
         {
             BudgetProposalDTO budgetProposalDTO = new BudgetProposalDTO();
-
             budgetProposalDTO.setId(budgetProposal.getId());
             budgetProposalDTO.setSportingAmmount(budgetProposal.getSportingAmmount());
             budgetProposalDTO.setEventOrgAmmount(budgetProposal.getEventOrgAmmount());
@@ -101,20 +104,5 @@ public class BudgetProposalService {
     }
 
 
-    public List<BudgetProposal> getVotedPropositions(String userId)
-    {
-        List<BudgetProposal> nonVotedProposals = budgetProposalRepository.findAll();
-        List<BudgetProposal> votedProposals = new ArrayList<>();
 
-        for (Voted voted:votedService.getVotes())
-        {
-            if(voted.voterId.equals(userId))
-            {
-                nonVotedProposals.removeIf(proposal -> proposal.getId() == voted.proposaId);
-            }
-        }
-
-        return nonVotedProposals;
-
-    }
 }

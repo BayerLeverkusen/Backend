@@ -17,4 +17,5 @@ public interface BudgetProposalRepository extends JpaRepository<BudgetProposal,I
     BudgetProposal getBudgetProposalsById(int id);
 
     List<BudgetProposal> deleteBudgetProposalsById(int id);
+
 }
