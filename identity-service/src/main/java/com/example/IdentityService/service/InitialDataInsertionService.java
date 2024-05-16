@@ -34,6 +34,7 @@ public class InitialDataInsertionService {
         insertUserIfNotExists("Admin", "Administrator", "NajjaciAdmin123", "admin", LocalDate.of(1994, 11, 20), UserRole.ADMIN);
         insertUserIfNotExists("Aleksa", "Simeunovic", "marketing", "manager", LocalDate.of(1994, 11, 20), UserRole.SHOP_MANAGER);
         insertUserIfNotExists("Aleksa", "Lukac", "uprava", "uprava", LocalDate.of(1994, 11, 20), UserRole.DIRECTOR);
+        insertUserIfNotExists("Igor", "Andjelkovic", "fan", "fan", LocalDate.of(1994, 11, 20), UserRole.FAN);
 
     }
 }
