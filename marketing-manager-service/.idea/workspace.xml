@@ -5,8 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551f2679-02af-4228-a962-3058ec782287" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/InitialDataInsertionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/InitialDataInsertionService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Article.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/service/InitialDataInsertionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/service/InitialDataInsertionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,31 +42,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Maven.event-organization-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.event-organization-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marketing-manager-service [clean].executor&quot;: &quot;Run&quot;,
-    &quot;Maven.marketing-manager-service [install].executor&quot;: &quot;Run&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;Spring Boot.MarketingManagerServiceApplication.executor&quot;: &quot;Run&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Marketing__Manager__1__Sprint__Bekend&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/aleks/OneDrive/Dokumenti/GitHub/Backend/marketing-manager-service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.project.maven.repository.indices&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Maven.event-organization-service [clean].executor": "Run",
+    "Maven.event-organization-service [install].executor": "Run",
+    "Maven.marketing-manager-service [clean].executor": "Run",
+    "Maven.marketing-manager-service [install].executor": "Run",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "Spring Boot.MarketingManagerServiceApplication.executor": "Run",
+    "git-widget-placeholder": "Marketing__Manager__1__Sprint__Bekend",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/ifeel/Documents/GitHub/Backend/marketing-manager-service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.project.maven.repository.indices",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="MarketingManagerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="marketing-manager-service" />
@@ -79,8 +79,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-11.0.16-jbr_dcevm-11.0.16-4caba194b151-788636e5" />
-        <option value="jdk-17.0.10-corretto-17.0.10-4caba194b151-5cd809f4" />
+        <option value="bundled-jdk-9f38398b9061-18abd8497189-intellij.indexing.shared.core-IU-241.14494.240" />
+        <option value="bundled-js-predefined-1d06a55b98c1-74d2a5396914-JavaScript-IU-241.14494.240" />
       </set>
     </attachedChunks>
   </component>
@@ -99,6 +99,7 @@
       <workItem from="1714743608885" duration="5659000" />
       <workItem from="1714815755311" duration="2524000" />
       <workItem from="1714832860321" duration="51000" />
+      <workItem from="1715860326688" duration="1660000" />
     </task>
     <servers />
   </component>

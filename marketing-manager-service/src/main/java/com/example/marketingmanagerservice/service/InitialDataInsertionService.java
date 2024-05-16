@@ -19,6 +19,7 @@ public class InitialDataInsertionService {
                 .name("Official Home Jersey")
                 .description("Replica of the official home jersey worn by Bayer Leverkusen players on match days. Made with breathable fabric for comfort and featuring the club's crest.")
                 .price(59.99)
+                .imageUrl("https://www.sportsdirect.com/images/imgzoom/37/37749108_xxl.jpg")
                 .build();
 
         Article article2 = Article.builder()

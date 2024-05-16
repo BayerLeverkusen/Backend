@@ -26,4 +26,7 @@ public class Article {
 
     @Column
     private double price;
+
+    @Column
+    private String imageUrl;
 }
