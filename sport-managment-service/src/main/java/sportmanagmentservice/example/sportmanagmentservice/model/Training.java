@@ -32,7 +32,7 @@ public class Training {
     @JoinColumn(name = "club_facility_id")
     private ClubFacility clubFacility;
 
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(
             name = "training_players",
             joinColumns = @JoinColumn(name = "training_id"),

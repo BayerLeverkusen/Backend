@@ -10,6 +10,7 @@ import sportmanagmentservice.example.sportmanagmentservice.dtos.TrainingRequest;
 import sportmanagmentservice.example.sportmanagmentservice.model.Training;
 import sportmanagmentservice.example.sportmanagmentservice.service.TrainingService;
 
+import java.time.LocalDate;
 import java.util.List;
 
 @RestController
@@ -32,5 +33,13 @@ public class TrainingController {
         List<TrainingDTO> trainings = trainingService.getTrainingsByClubFacilityId(clubFacilityId);
         return ResponseEntity.ok(trainings);
     }
+
+    @GetMapping("/getByDate/{date}")
+    public ResponseEntity<List<TrainingDTO>> getTrainingsByDate(@PathVariable LocalDate date){
+        List<TrainingDTO> trainings = trainingService.getTrainingsByDate(date);
+        return ResponseEntity.ok(trainings);
+    }
+
+
 
 }
