@@ -18,5 +18,6 @@ public interface PlayingFieldRepository extends JpaRepository<PlayingField, Inte
 
     List<PlayingField> findAllByCity (String city);
 
-    Iterable<PlayingField> findAllByCountry (String country);
+
+    List<PlayingField> findAll();
 }

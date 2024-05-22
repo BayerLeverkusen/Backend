@@ -33,4 +33,9 @@ public class transportController {
         transportService.reserveTransport(hotelReservationRequest);
     }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<HotelDto>> getAll(){
+        return ResponseEntity.ok(transportService.getAll());
+    }
+
 }

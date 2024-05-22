@@ -34,4 +34,9 @@ public class fieldController {
         fieldService.reserveField(hotelReservationRequest);
     }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<HotelDto>> getAll(){
+        return ResponseEntity.ok(fieldService.getAll());
+    }
+
 }

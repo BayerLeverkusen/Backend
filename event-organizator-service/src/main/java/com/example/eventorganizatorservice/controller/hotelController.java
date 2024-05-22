@@ -30,4 +30,9 @@ public class hotelController {
         hotelService.reserveHotel(hotelReservationRequest);
     }
 
+    @GetMapping("/get")
+    public ResponseEntity<List<HotelDto>> getAll(){
+        return ResponseEntity.ok(hotelService.getAll());
+    }
+
 }

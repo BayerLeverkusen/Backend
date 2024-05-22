@@ -39,6 +39,12 @@ public class FieldService {
         reservationsRepository.save(reservations);
     }
 
+    public List<HotelDto> getAll() {
+        List<PlayingField> fields = fieldRepository.findAll();
+        return fields.stream().map(this::convertToDto).collect(Collectors.toList());
+
+    }
+
     private HotelDto convertToDto(PlayingField field) {
         return HotelDto.builder()
                 .hotelName(field.getName())
