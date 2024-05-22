@@ -29,7 +29,7 @@ public class PlayingField extends Resource {
     private String address;
 
     @Column
-    private boolean type;
+    private double price;
 
     @Column
     private double rating;

@@ -40,17 +40,17 @@ public class InitialDataInsertionService {
         Hotel hotel10 = new Hotel("Hotel Sechzehn", "Germany", "Leverkusen", "Bahnstr. 16", 100.00,3.6);
 
 
-        PlayingField field1 = new PlayingField("Camp Nou", "Spain", "Barcelona", "Carrer d'Aristides Maillol, 12", true,4.3);
-        PlayingField field2 = new PlayingField("Parc de la Ciutadella", "Spain", "Barcelona", "Passeig de Picasso, s/n", true,3.8);
-        PlayingField field3 = new PlayingField("Montjuic Olympic Stadium", "Spain", "Barcelona", "Passeig Olímpic, 17-19", true,4.8);
-        PlayingField field4 = new PlayingField("Barcelona Beach", "Spain", "Barcelona", "Barceloneta Beach", true,3.2);
-        PlayingField field5 = new PlayingField("Tibidabo Amusement Park", "Spain", "Barcelona", "Placa del Tibidabo, 3-4", true,4.2);
+        PlayingField field1 = new PlayingField("Camp Nou", "Spain", "Barcelona", "Carrer d'Aristides Maillol, 12", 20,4.3);
+        PlayingField field2 = new PlayingField("Parc de la Ciutadella", "Spain", "Barcelona", "Passeig de Picasso, s/n", 17,3.8);
+        PlayingField field3 = new PlayingField("Montjuic Olympic Stadium", "Spain", "Barcelona", "Passeig Olímpic, 17-19", 22,4.8);
+        PlayingField field4 = new PlayingField("Barcelona Beach", "Spain", "Barcelona", "Barceloneta Beach", 15,3.2);
+        PlayingField field5 = new PlayingField("Tibidabo Amusement Park", "Spain", "Barcelona", "Placa del Tibidabo, 3-4", 19,4.2);
 
-        PlayingField field6 = new PlayingField("BayArena", "Germany", "Leverkusen", "Bismarckstraße 118", false,3);
-        PlayingField field7 = new PlayingField("Sportplatz Kruppstrasse", "Germany", "Leverkusen", "Kruppstrasse 68", false,3);
-        PlayingField field8 = new PlayingField("Sportanlage Birkenberg", "Germany", "Leverkusen", "Lindemannstrasse 30", false,3);
-        PlayingField field9 = new PlayingField("Sportheim Wiembachtal", "Germany", "Leverkusen", "Mühlheimer Straße 137", false,3);
-        PlayingField field10 = new PlayingField("Sportanlage Manforter Straße", "Germany", "Leverkusen", "Manforter Straße 189", false,3);
+        PlayingField field6 = new PlayingField("BayArena", "Germany", "Leverkusen", "Bismarckstraße 118", 19,3);
+        PlayingField field7 = new PlayingField("Sportplatz Kruppstrasse", "Germany", "Leverkusen", "Kruppstrasse 68", 21,3.7);
+        PlayingField field8 = new PlayingField("Sportanlage Birkenberg", "Germany", "Leverkusen", "Lindemannstrasse 30", 13,3);
+        PlayingField field9 = new PlayingField("Sportheim Wiembachtal", "Germany", "Leverkusen", "Mühlheimer Straße 137", 17,4.2);
+        PlayingField field10 = new PlayingField("Sportanlage Manforter Straße", "Germany", "Leverkusen", "Manforter Straße 189", 20,2.7);
 
 
         Transport transport1 = new Transport("Barcelona El Prat Airport", "Spain", "Barcelona", "Avinguda de l'Aeroport, s/n", 30.00,3.8);
