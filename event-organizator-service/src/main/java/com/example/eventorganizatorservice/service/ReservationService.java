@@ -9,6 +9,7 @@ import com.example.eventorganizatorservice.repository.TransportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
@@ -28,46 +29,72 @@ public class ReservationService {
     @Autowired
     private ReservationsRepository reservationsRepository;
 
+
+
     public List<ReservationsDto> getAllReservations() {
         List<ReservationsDto> dtos = new ArrayList<>();
+        ReservationsDto currentDto = null;
+        int reservationCount = 0;
+
         for (Reservations reservation : reservationsRepository.findAll()) {
-            ReservationsDto dto = new ReservationsDto();
+            if (currentDto == null || reservationCount % 3 == 0) {
+                currentDto = new ReservationsDto();
+                dtos.add(currentDto);
+                reservationCount = 0; // Reset the counter for the new DTO
+            }
 
-            Optional<Hotel> hotel = hotelRepository.findById(reservation.getId());
-            Optional<PlayingField> playingField = playingFieldRepository.findById(reservation.getId());
-            Optional<Transport> transport = transportRepository.findById(reservation.getId());
+            switch (reservation.getType()) {
+                case HOTEL:
+                    Optional<Hotel> hotelOpt = hotelRepository.findById(reservation.getResource().id);
+                    if (hotelOpt.isPresent()) {
+                        Hotel hotel = hotelOpt.get();
+                        currentDto.setReservationHotelId(reservation.getId());
+                        currentDto.setReservationHotelName(hotel.getName());
+                        currentDto.setReservationHotelCountry(hotel.getCountry());
+                        currentDto.setReservationHotelCity(hotel.getCity());
+                        currentDto.setReservationHotelPrice(hotel.getPrice());
+                        currentDto.setReservationHotelStartDate(reservation.getStartDate());
+                        currentDto.setReservationHotelEndDate(reservation.getEndDate());
+                    }
+                    break;
+                case TRANSPORT:
+                    Optional<Transport> transportOpt = transportRepository.findById(reservation.getResource().id);
+                    if (transportOpt.isPresent()) {
+                        Transport transport = transportOpt.get();
+                        currentDto.setReservationTransportId(reservation.getId());
+                        currentDto.setReservationTransportName(transport.getName());
+                        currentDto.setReservationTransportCountry(transport.getCountry());
+                        currentDto.setReservationTransportCity(transport.getCity());
+                        currentDto.setReservationTransportPrice(transport.getPrice());
+                        currentDto.setReservationTransportStartDate(reservation.getStartDate());
+                        currentDto.setReservationTransportEndDate(reservation.getEndDate());
+                    }
+                    break;
+                case FIELD:
+                    Optional<PlayingField> playingFieldOpt = playingFieldRepository.findById(reservation.getResource().id);
+                    if (playingFieldOpt.isPresent()) {
+                        PlayingField playingField = playingFieldOpt.get();
+                        currentDto.setReservationFieldId(reservation.getId());
+                        currentDto.setReservationFieldName(playingField.getName());
+                        currentDto.setReservationFieldCountry(playingField.getCountry());
+                        currentDto.setReservationFieldCity(playingField.getCity());
+                        currentDto.setReservationFieldPrice(playingField.getPrice());
+                        currentDto.setReservationFieldStartDate(reservation.getStartDate());
+                        currentDto.setReservationFieldEndDate(reservation.getEndDate());
+                    }
+                    break;
+                default:
+                    // Handle unexpected types (optional)
+            }
 
-            dto.setReservationHotelId(reservation.getId());
-           // dto.setReservationHotelName(hotel.get().getName());
-           // dto.setReservationHotelCountry(hotel.get().getCountry());
-           // dto.setReservationHotelCity(hotel.get().getCity());
-           // dto.setReservationHotelPrice(hotel.get().getPrice());
-            dto.setReservationHotelStartDate(reservation.getStartDate());
-            dto.setReservationHotelEndDate(reservation.getEndDate());
-
-
-            dto.setReservationTransportId(reservation.getId());
-           // dto.setReservationTransportName(transport.get().getName());
-          //  dto.setReservationTransportCountry(transport.get().getCountry());
-          //  dto.setReservationTransportCity(transport.get().getCity());
-          //  dto.setReservationTransportPrice(transport.get().getPrice());
-            dto.setReservationTransportStartDate(reservation.getStartDate());
-            dto.setReservationTransportEndDate(reservation.getEndDate());
-
-            dto.setReservationFieldId(reservation.getId());
-           // dto.setReservationFieldName(playingField.get().getName());
-           // dto.setReservationFieldCountry(playingField.get().getCountry());
-           // dto.setReservationFieldCity(playingField.get().getCity());
-           // dto.setReservationFieldPrice(playingField.get().getPrice());
-            dto.setReservationFieldStartDate(reservation.getStartDate());
-            dto.setReservationFieldEndDate(reservation.getEndDate());
-
-
-
-            dtos.add(dto);
+            reservationCount++;
         }
+
         return dtos;
     }
+
+
+
 
     public Optional<Hotel> getAllR() {
         Optional<Hotel> hotel = hotelRepository.findById(2);
