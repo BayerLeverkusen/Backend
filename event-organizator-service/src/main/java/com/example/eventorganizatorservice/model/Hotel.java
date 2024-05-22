@@ -9,6 +9,7 @@ import lombok.*;
 @NoArgsConstructor
 @AllArgsConstructor
 @Setter
+@Getter
 @Table(name = "hotels")
 public class Hotel extends Resource {
 
