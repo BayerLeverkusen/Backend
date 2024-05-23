@@ -2,9 +2,12 @@ package com.example.directorservice.controller;
 
 import com.example.directorservice.dtos.BudgetDTO;
 import com.example.directorservice.dtos.BudgetProposalDTO;
+import com.example.directorservice.dtos.LoanDTO;
 import com.example.directorservice.dtos.VotedDTO;
 import com.example.directorservice.model.BudgetProposal;
 import com.example.directorservice.service.BudgetProposalService;
+import com.example.directorservice.service.FinancialStatementService;
+import com.example.directorservice.service.LoanService;
 import com.example.directorservice.service.VotedService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -12,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.function.IntToDoubleFunction;
 
 
 @RestController
@@ -23,6 +27,12 @@ import java.util.List;
 
         @Autowired
         private VotedService votedService;
+
+        @Autowired
+        private LoanService loanService;
+
+        @Autowired
+        private FinancialStatementService financialStatementService;
 
         @PutMapping("/addProposal")
         public ResponseEntity<String> addProposal(@RequestBody BudgetDTO budgetDTO)
@@ -66,6 +76,31 @@ import java.util.List;
                 return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Failed to vote " + e.getMessage());
             }
         }
+
+        @PutMapping("/requestLoan")
+        public String requestLoan(@RequestBody LoanDTO loanDTO)
+        {
+            return loanService.takeLoan(Integer.parseInt(loanDTO.getAmmount()));
+        }
+
+        @GetMapping("/getBalance")
+        public String getBalance()
+        {
+            return Integer.toString(financialStatementService.getCurrentBalance());
+        }
+
+        @GetMapping("/getLoanAmt")
+        public String getLoanAmt()
+        {
+            return Integer.toString(loanService.getActiveLoanAmmount());
+        }
+
+        @PutMapping("/payLoan")
+        public void payLoan()
+        {
+            loanService.payLoan();
+        }
+
 
 
     }
