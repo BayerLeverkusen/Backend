@@ -4,6 +4,7 @@ import com.example.eventorganizatorservice.model.PlayingField;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 
 @Repository
@@ -13,9 +14,10 @@ public interface PlayingFieldRepository extends JpaRepository<PlayingField, Inte
 
     Optional<PlayingField> findById(Integer id);
 
-    Optional<PlayingField> findByName(String name);
+    PlayingField findByName(String name);
 
-    Iterable<PlayingField> findAllByCity (String city);
+    List<PlayingField> findAllByCity (String city);
 
-    Iterable<PlayingField> findAllByCountry (String country);
+
+    List<PlayingField> findAll();
 }
