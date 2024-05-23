@@ -35,4 +35,9 @@ public class reservationController {
         reservationService.deleteRes(delRequests);
     }
 
+    @PatchMapping
+    public void modifyReservation(@RequestBody ModRequest modRequests) {
+
+    }
+
 }
