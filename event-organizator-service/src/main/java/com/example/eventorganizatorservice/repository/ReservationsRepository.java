@@ -16,4 +16,5 @@ public interface ReservationsRepository extends CrudRepository<Reservations, Int
     List<Reservations> findAll();
 
 
+    void deleteById(int id);
 }

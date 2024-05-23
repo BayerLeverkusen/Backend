@@ -1,9 +1,6 @@
 package com.example.eventorganizatorservice.controller;
 
-import com.example.eventorganizatorservice.dtos.HotelDto;
-import com.example.eventorganizatorservice.dtos.HotelRequest;
-import com.example.eventorganizatorservice.dtos.HotelReservationRequest;
-import com.example.eventorganizatorservice.dtos.ReservationsDto;
+import com.example.eventorganizatorservice.dtos.*;
 import com.example.eventorganizatorservice.model.Hotel;
 import com.example.eventorganizatorservice.model.Reservations;
 import com.example.eventorganizatorservice.service.HotelService;
@@ -33,5 +30,9 @@ public class reservationController {
         return ResponseEntity.ok(reservationService.getAllR());
     }
 
+    @DeleteMapping("/delete")
+    public void deleteReservation(@RequestBody delRequest delRequests) {
+        reservationService.deleteRes(delRequests);
+    }
 
 }

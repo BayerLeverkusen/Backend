@@ -1,6 +1,7 @@
 package com.example.eventorganizatorservice.service;
 
 import com.example.eventorganizatorservice.dtos.ReservationsDto;
+import com.example.eventorganizatorservice.dtos.delRequest;
 import com.example.eventorganizatorservice.model.*;
 import com.example.eventorganizatorservice.repository.HotelRepository;
 import com.example.eventorganizatorservice.repository.PlayingFieldRepository;
@@ -29,6 +30,15 @@ public class ReservationService {
     @Autowired
     private ReservationsRepository reservationsRepository;
 
+    public void deleteRes(delRequest delRequests){
+
+        reservationsRepository.deleteById(delRequests.getIdRH());
+        reservationsRepository.deleteById(delRequests.getIdRT());
+        reservationsRepository.deleteById(delRequests.getIdRF());
+
+
+
+    }
 
 
     public List<ReservationsDto> getAllReservations() {
