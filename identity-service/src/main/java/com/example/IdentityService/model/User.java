@@ -6,7 +6,6 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.checkerframework.common.aliasing.qual.Unique;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
@@ -21,6 +20,7 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Table(name = "users")
+@Inheritance(strategy = InheritanceType.JOINED)  // Use JOINED strategy
 public class User implements UserDetails {
 
     @Id
@@ -33,8 +33,7 @@ public class User implements UserDetails {
     @Column
     public String lastName;
 
-    @Column
-    @Unique
+    @Column(unique = true)
     public String username;
 
     @Column
@@ -90,5 +89,4 @@ public class User implements UserDetails {
     public boolean isEnabled() {
         return true;
     }
-
 }

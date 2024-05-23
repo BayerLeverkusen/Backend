@@ -1,7 +1,7 @@
 package com.example.marketingmanagerservice.controller;
 
 import com.example.marketingmanagerservice.model.Article;
-import com.example.marketingmanagerservice.repository.ArticleRepository;
+    import com.example.marketingmanagerservice.repository.ArticleRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

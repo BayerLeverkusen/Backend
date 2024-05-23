@@ -5,8 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="551f2679-02af-4228-a962-3058ec782287" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/controller/FanController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/enums/FanLevel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/model/Fan.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/repository/FanRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/FanService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/controller/MessageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/ArticleWarehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/ArticleWarehouseKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Warehouse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/repository/ArticleWarehouseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/repository/MessageRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/repository/WarehouseRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/model/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/model/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/InitialDataInsertionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/InitialDataInsertionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/resources/schema.sql" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/resources/schema.sql" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Article.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/model/Article.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/controller/ArticleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/controller/ArticleController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/service/InitialDataInsertionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/marketingmanagerservice/service/InitialDataInsertionService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -18,6 +34,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -67,6 +84,11 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.example.marketingmanagerservice.model" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="MarketingManagerServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="marketing-manager-service" />
@@ -100,6 +122,8 @@
       <workItem from="1714815755311" duration="2524000" />
       <workItem from="1714832860321" duration="51000" />
       <workItem from="1715860326688" duration="1660000" />
+      <workItem from="1716208485352" duration="6315000" />
+      <workItem from="1716286014185" duration="9570000" />
     </task>
     <servers />
   </component>

@@ -1,7 +1,10 @@
 package com.example.IdentityService.service;
 
-import com.example.IdentityService.model.User;
+import com.example.IdentityService.enums.FanLevel;
 import com.example.IdentityService.enums.UserRole;
+import com.example.IdentityService.model.Fan;
+import com.example.IdentityService.model.User;
+import com.example.IdentityService.repository.FanRepository;
 import com.example.IdentityService.repository.UserRepository;
 import jakarta.transaction.Transactional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +20,9 @@ public class InitialDataInsertionService {
     private UserRepository userRepository;
 
     @Autowired
+    private FanRepository fanRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
     private void insertUserIfNotExists(String firstName, String lastName, String username, String password, LocalDate birthDate, UserRole role) {
@@ -25,6 +31,22 @@ public class InitialDataInsertionService {
             userRepository.save(user);
         }
     }
+
+    public void insertFanIfNotExists(String firstName, String lastName, String username, String password, LocalDate birthDate, FanLevel level, int balance) {
+        if (!userRepository.existsByUsername(username)) {
+            Fan fan = Fan.fanBuilder()
+                    .name(firstName)
+                    .lastName(lastName)
+                    .username(username)
+                    .password(passwordEncoder.encode(password))
+                    .dateOfBirth(birthDate)
+                    .level(level)
+                    .balance(balance)
+                    .build();
+            fanRepository.save(fan);
+        }
+    }
+
 
     @Transactional
     public void insertInitialData() {
@@ -36,5 +58,9 @@ public class InitialDataInsertionService {
         insertUserIfNotExists("Aleksa", "Lukac", "uprava", "uprava", LocalDate.of(1994, 11, 20), UserRole.DIRECTOR);
         insertUserIfNotExists("Igor", "Andjelkovic", "fan", "fan", LocalDate.of(1994, 11, 20), UserRole.FAN);
 
+        // Insert new fans
+        insertFanIfNotExists("Nemanja", "Todorovic", "nemanja", "todorovic", LocalDate.of(1990, 1, 1), FanLevel.BRONZE, 1000);
+        insertFanIfNotExists("Andrej", "Anisic", "andrej", "anisic", LocalDate.of(1985, 5, 15), FanLevel.SILVER, 2000);
+        insertFanIfNotExists("Vladimir", "Blanusa", "vladimir", "blanusa", LocalDate.of(1995, 8, 20), FanLevel.GOLD, 3000);
     }
 }
