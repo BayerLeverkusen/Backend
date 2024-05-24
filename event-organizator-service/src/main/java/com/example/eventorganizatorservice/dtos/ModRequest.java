@@ -14,13 +14,11 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ModRequest {
-    public int resourceName;
+    public int resID;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     public LocalDate startDate;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     public LocalDate endDate;
-    public String city;
-    public String country;
-    public Type type;
+
 
 }
