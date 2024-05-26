@@ -14,7 +14,8 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 public class ModRequest {
-    public int resID;
+    private int resID;
+    public String resName;
     @JsonDeserialize(using = LocalDateDeserializer.class)
     public LocalDate startDate;
     @JsonDeserialize(using = LocalDateDeserializer.class)

@@ -35,9 +35,9 @@ public class reservationController {
         reservationService.deleteRes(delRequests);
     }
 
-    @PatchMapping
+    @PostMapping  ("/modify")
     public void modifyReservation(@RequestBody ModRequest modRequests) {
-
+        reservationService.modifyRes(modRequests);
     }
 
 }

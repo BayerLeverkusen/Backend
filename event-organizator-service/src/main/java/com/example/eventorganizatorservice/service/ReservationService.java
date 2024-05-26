@@ -1,5 +1,6 @@
 package com.example.eventorganizatorservice.service;
 
+import com.example.eventorganizatorservice.dtos.ModRequest;
 import com.example.eventorganizatorservice.dtos.ReservationsDto;
 import com.example.eventorganizatorservice.dtos.delRequest;
 import com.example.eventorganizatorservice.model.*;
@@ -40,6 +41,18 @@ public class ReservationService {
 
     }
 
+    public void modifyRes(ModRequest modRequests){
+        Reservations reservation = reservationsRepository.findById(modRequests.getResID());
+        System.out.println(reservation);
+        Hotel hotel = hotelRepository.findByName(modRequests.resName);
+
+        reservation.setStartDate(modRequests.startDate);
+        reservation.setEndDate(modRequests.endDate);
+        reservation.setResource(hotel);
+
+
+        reservationsRepository.save(reservation);
+    }
 
     public List<ReservationsDto> getAllReservations() {
         List<ReservationsDto> dtos = new ArrayList<>();
