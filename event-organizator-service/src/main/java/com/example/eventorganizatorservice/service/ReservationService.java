@@ -44,11 +44,27 @@ public class ReservationService {
     public void modifyRes(ModRequest modRequests){
         Reservations reservation = reservationsRepository.findById(modRequests.getResID());
         System.out.println(reservation);
-        Hotel hotel = hotelRepository.findByName(modRequests.resName);
-
         reservation.setStartDate(modRequests.startDate);
         reservation.setEndDate(modRequests.endDate);
-        reservation.setResource(hotel);
+
+        if(reservation.getType()==Type.HOTEL){
+            Hotel hotel = hotelRepository.findByName(modRequests.resName);
+            reservation.setResource(hotel);
+        }
+
+        if(reservation.getType()==Type.TRANSPORT){
+            Transport transport = transportRepository.findByName(modRequests.resName);
+            reservation.setResource(transport);
+        }
+
+        if(reservation.getType()==Type.FIELD){
+            PlayingField field = playingFieldRepository.findByName(modRequests.resName);
+            reservation.setResource(field);
+        }
+
+
+
+
 
 
         reservationsRepository.save(reservation);
