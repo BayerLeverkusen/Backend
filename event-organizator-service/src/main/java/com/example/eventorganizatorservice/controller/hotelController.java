@@ -1,12 +1,9 @@
 package com.example.eventorganizatorservice.controller;
 
 import com.example.eventorganizatorservice.dtos.HotelDto;
-import com.example.eventorganizatorservice.dtos.HotelRequest;
 import com.example.eventorganizatorservice.dtos.HotelReservationRequest;
-import com.example.eventorganizatorservice.model.Hotel;
 import com.example.eventorganizatorservice.service.HotelService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 

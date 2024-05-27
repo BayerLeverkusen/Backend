@@ -31,6 +31,20 @@ public class ReservationService {
     @Autowired
     private ReservationsRepository reservationsRepository;
 
+    public boolean validateDate(LocalDate startingDate, LocalDate endingDate, Type type) {
+
+            List<Reservations> reservations = reservationsRepository.findByType(type);
+            for(Reservations reservation : reservations) {
+                if (startingDate.isBefore(reservation.getEndDate()) && endingDate.isAfter(reservation.getStartDate())) {
+                    return false; // Overlap detected, return false
+                }
+            }
+
+
+
+        return true;
+    }
+
     public void deleteRes(delRequest delRequests){
 
         reservationsRepository.deleteById(delRequests.getIdRH());

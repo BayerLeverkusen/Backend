@@ -1,10 +1,8 @@
 package com.example.eventorganizatorservice.service;
 
 import com.example.eventorganizatorservice.dtos.HotelDto;
-import com.example.eventorganizatorservice.dtos.HotelRequest;
 import com.example.eventorganizatorservice.dtos.HotelReservationRequest;
 import com.example.eventorganizatorservice.model.Hotel;
-import com.example.eventorganizatorservice.model.PlayingField;
 import com.example.eventorganizatorservice.model.Reservations;
 import com.example.eventorganizatorservice.model.Resource;
 import com.example.eventorganizatorservice.repository.HotelRepository;
