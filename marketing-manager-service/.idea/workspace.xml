@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="551f2679-02af-4228-a962-3058ec782287" name="Changes" comment="" />
+    <list default="true" id="551f2679-02af-4228-a962-3058ec782287" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/controller/FanController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/controller/FanController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/FanService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../identity-service/src/main/java/com/example/IdentityService/service/FanService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />

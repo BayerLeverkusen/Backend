@@ -43,4 +43,26 @@ public class FanController {
             this.amount = amount;
         }
     }
+
+    @PutMapping("/balance/update")
+    public ResponseEntity<Void> updateBalance(Authentication authentication, @RequestBody UpdateBalanceRequest updateBalanceRequest) {
+        String username = authentication.getName();
+        int newBalance = updateBalanceRequest.getNewBalance();
+
+        fanService.updateBalance(username, newBalance);
+        return ResponseEntity.ok().build();
+    }
+
+    public static class UpdateBalanceRequest {
+        private int newBalance;
+
+        public int getNewBalance() {
+            return newBalance;
+        }
+
+        public void setNewBalance(int newBalance) {
+            this.newBalance = newBalance;
+        }
+    }
+
 }

@@ -29,5 +29,13 @@ public class FanService {
         }
     }
 
+    public void updateBalance(String username, int newBalance) {
+        Fan fan = fanRepository.findByUsername(username);
+        if (fan != null) {
+            fan.setBalance(newBalance);
+            fanRepository.save(fan);
+        }
+    }
+
 
 }
