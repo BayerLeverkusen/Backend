@@ -35,9 +35,15 @@ public class reservationController {
         reservationService.deleteRes(delRequests);
     }
 
-    @PatchMapping
+    @PostMapping  ("/modify")
     public void modifyReservation(@RequestBody ModRequest modRequests) {
+        reservationService.modifyRes(modRequests);
+    }
 
+    @PostMapping("/validateDate")  // Adjust path if needed
+    public ResponseEntity<Boolean> validateDate(@RequestBody ValidateDateRequest request) {
+        boolean isValid = reservationService.validateDate(request.getStartingDate(), request.getEndingDate(), request.getType());
+        return ResponseEntity.ok(isValid);
     }
 
 }

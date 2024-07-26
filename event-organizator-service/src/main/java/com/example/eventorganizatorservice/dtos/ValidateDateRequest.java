@@ -13,13 +13,10 @@ import java.time.LocalDate;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class ModRequest {
-    private int resID;
-    public String resName;
+public class ValidateDateRequest {
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    public LocalDate startDate;
+    public LocalDate startingDate;
     @JsonDeserialize(using = LocalDateDeserializer.class)
-    public LocalDate endDate;
-
-
+    public LocalDate endingDate;
+    public Type type;
 }

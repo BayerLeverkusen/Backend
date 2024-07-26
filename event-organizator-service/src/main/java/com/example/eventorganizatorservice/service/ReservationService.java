@@ -1,5 +1,6 @@
 package com.example.eventorganizatorservice.service;
 
+import com.example.eventorganizatorservice.dtos.ModRequest;
 import com.example.eventorganizatorservice.dtos.ReservationsDto;
 import com.example.eventorganizatorservice.dtos.delRequest;
 import com.example.eventorganizatorservice.model.*;
@@ -30,6 +31,20 @@ public class ReservationService {
     @Autowired
     private ReservationsRepository reservationsRepository;
 
+    public boolean validateDate(LocalDate startingDate, LocalDate endingDate, Type type) {
+
+            List<Reservations> reservations = reservationsRepository.findByType(type);
+            for(Reservations reservation : reservations) {
+                if (startingDate.isBefore(reservation.getEndDate()) && endingDate.isAfter(reservation.getStartDate())) {
+                    return false; // Overlap detected, return false
+                }
+            }
+
+
+
+        return true;
+    }
+
     public void deleteRes(delRequest delRequests){
 
         reservationsRepository.deleteById(delRequests.getIdRH());
@@ -40,6 +55,34 @@ public class ReservationService {
 
     }
 
+    public void modifyRes(ModRequest modRequests){
+        Reservations reservation = reservationsRepository.findById(modRequests.getResID());
+        System.out.println(reservation);
+        reservation.setStartDate(modRequests.startDate);
+        reservation.setEndDate(modRequests.endDate);
+
+        if(reservation.getType()==Type.HOTEL){
+            Hotel hotel = hotelRepository.findByName(modRequests.resName);
+            reservation.setResource(hotel);
+        }
+
+        if(reservation.getType()==Type.TRANSPORT){
+            Transport transport = transportRepository.findByName(modRequests.resName);
+            reservation.setResource(transport);
+        }
+
+        if(reservation.getType()==Type.FIELD){
+            PlayingField field = playingFieldRepository.findByName(modRequests.resName);
+            reservation.setResource(field);
+        }
+
+
+
+
+
+
+        reservationsRepository.save(reservation);
+    }
 
     public List<ReservationsDto> getAllReservations() {
         List<ReservationsDto> dtos = new ArrayList<>();

@@ -1,10 +1,8 @@
 package com.example.eventorganizatorservice.service;
 
 import com.example.eventorganizatorservice.dtos.HotelDto;
-import com.example.eventorganizatorservice.dtos.HotelRequest;
 import com.example.eventorganizatorservice.dtos.HotelReservationRequest;
 import com.example.eventorganizatorservice.model.*;
-import com.example.eventorganizatorservice.repository.HotelRepository;
 import com.example.eventorganizatorservice.repository.ReservationsRepository;
 import com.example.eventorganizatorservice.repository.TransportRepository;
 import org.springframework.beans.factory.annotation.Autowired;
